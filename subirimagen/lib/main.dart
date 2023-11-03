@@ -91,6 +91,14 @@ class _ImageUploadScreenState extends State<ImageUploadScreen> {
                 },
               ),
             ),
+            ElevatedButton(
+              onPressed: getImage,
+              child: Text("Seleccionar Imágenes"),
+            ),
+            ElevatedButton(
+              onPressed: uploadImages,
+              child: Text("Subir Imágenes"),
+            ),
           ],
         ),
       ),
