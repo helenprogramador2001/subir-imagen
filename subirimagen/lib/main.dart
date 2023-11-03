@@ -43,17 +43,7 @@ class _ImageUploadScreenState extends State<ImageUploadScreen> {
     });
   }
 
-  Future uploadImages() async {
-    for (int i = 0; i < _images.length; i++) {
-      File image = _images[i];
-      if (image != null && image.path.isNotEmpty) {
-        String imageName = "image_$i.jpg";
-        Reference storageReference =
-            FirebaseStorage.instance.ref().child(imageName);
-        UploadTask uploadTask = storageReference.putFile(image);
-
-        await uploadTask.whenComplete(() {
-          print('Imagen subida con éxito: $i');
+  
 
           // Mostrar una alerta de éxito cuando la imagen se haya subido con éxito
           QuickAlert.show(
